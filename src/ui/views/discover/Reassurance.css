@@ -1,0 +1,84 @@
+.reassurance {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  background: #f1eee6;
+  border-radius: 11px;
+  padding: 22px 24px;
+  margin: 29px 0;
+}
+
+.reassurance__icon {
+  color: #a08a70;
+  background: #e9e2d6;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.reassurance__title {
+  font-family: Manrope, sans-serif;
+  font-size: 13px;
+  color: #756957;
+  font-weight: 650;
+}
+
+.reassurance__text {
+  font-size: 10px;
+  color: #a09484;
+  margin-top: 6px;
+}
+
+.reassurance__star {
+  font-size: 37px;
+  color: #c9bfae;
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .reassurance {
+    padding: 19px 15px;
+    gap: 12px;
+    margin: 25px 0;
+  }
+
+  .reassurance__icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .reassurance__title {
+    font-size: 12px;
+  }
+
+  .reassurance__text {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+
+  .reassurance__star {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .reassurance {
+    background: #342f29;
+  }
+
+  .reassurance__title {
+    color: #ded1ba;
+  }
+
+  .reassurance__text {
+    color: #b9aa94;
+  }
+
+  .reassurance__icon {
+    background: #494037;
+    color: #d2b58c;
+  }
+}

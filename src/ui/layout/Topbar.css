@@ -1,0 +1,41 @@
+.topbar {
+  height: 77px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.topbar__community {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.topbar__icon {
+  margin-left: 10px;
+  color: #a58ab4;
+}
+
+@media (max-width: 950px) {
+  .topbar__community {
+    font-size: 0;
+  }
+
+  .topbar__icon {
+    width: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 47px;
+    font-size: 9px;
+  }
+
+  .topbar__community {
+    gap: 0;
+  }
+}

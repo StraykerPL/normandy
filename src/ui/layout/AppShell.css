@@ -1,0 +1,35 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-shell__main {
+  margin-left: 246px;
+  padding: 0 48px;
+  max-width: 1640px;
+}
+
+@media (min-width: 1500px) {
+  .app-shell__main {
+    padding: 0 65px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .app-shell__main {
+    margin-left: 215px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell__main {
+    margin: 0;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .app-shell__main {
+    padding: 0 14px;
+  }
+}

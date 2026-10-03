@@ -1,0 +1,142 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  max-height: 85dvh;
+}
+
+.chat__header {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat__title {
+  font-size: 18px;
+}
+
+.chat__subject {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.chat__privacy {
+  padding: 12px;
+  background: var(--lavender);
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--purple);
+}
+
+.chat__messages {
+  padding: 22px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.chat__date {
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.chat__message {
+  max-width: 85%;
+  margin-bottom: 19px;
+}
+
+.chat__message-text {
+  padding: 13px 16px;
+  background: var(--lavender);
+  border-radius: 14px 14px 14px 3px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.chat__message-meta {
+  font-size: 9px;
+  color: var(--muted);
+  display: block;
+  margin-top: 6px;
+}
+
+.chat__message.chat__message--you {
+  margin-left: auto;
+}
+
+.chat__message--you .chat__message-text {
+  background: #85679e;
+  color: white;
+  border-radius: 14px 14px 3px 14px;
+}
+
+.chat__message--you .chat__message-meta {
+  text-align: right;
+}
+
+.chat__form {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px 9px;
+  border-top: 1px solid var(--border);
+}
+
+.chat__input {
+  min-width: 0;
+  flex: 1;
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px;
+  font-size: 12px;
+}
+
+.chat__send {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  background: #85679e;
+  color: white;
+  border-radius: 9px;
+}
+
+.chat__disclaimer {
+  font-size: 9px;
+  text-align: center;
+  color: var(--muted);
+  padding: 0 15px 15px;
+}
+
+@media (max-width: 700px) {
+  .chat {
+    height: 75dvh;
+  }
+
+  .chat__messages {
+    padding: 18px;
+  }
+
+  .chat__form {
+    padding: 14px 14px 9px;
+  }
+
+  .chat__message {
+    max-width: 90%;
+  }
+}

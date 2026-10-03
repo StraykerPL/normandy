@@ -1,0 +1,127 @@
+.mentors {
+  padding-top: 34px;
+}
+
+.mentors__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mentors__description {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 9px 0 0 36px;
+}
+
+.mentors__filter-select {
+  appearance: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 7px;
+  background: var(--surface);
+  font-size: 10px;
+  padding: 10px 29px 10px 12px;
+  max-width: 165px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23988c9e'%3E%3Cpath d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 7px center;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+
+.mentors__results {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  margin: 23px 0 12px;
+}
+
+.mentors__availability {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mentors__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.empty-state__icon {
+  color: var(--purple);
+}
+
+.empty-state__title {
+  margin: 15px 0;
+}
+
+.empty-state__description {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1500px) {
+  .mentors__grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .mentors__grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 950px) {
+  .mentors__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mentors__heading {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .mentors__filter-select {
+    font-size: 10px;
+    padding: 8px 27px 8px 10px;
+  }
+
+  .mentors {
+    padding-top: 28px;
+  }
+
+  .mentors__heading {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .mentors__description {
+    margin-left: 0;
+    font-size: 10px;
+  }
+
+  .mentors__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 370px) {
+  .mentors__grid {
+    grid-template-columns: 1fr;
+  }
+}

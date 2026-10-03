@@ -1,0 +1,37 @@
+.footer {
+  padding: 20px 0 25px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9px;
+  color: var(--muted);
+  gap: 12px;
+}
+
+.footer__brand {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #a08cb0;
+  background: transparent;
+  padding: 0;
+}
+
+.footer__note {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+@media (max-width: 950px) {
+  .footer__tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    font-size: 8px;
+    padding: 18px 0;
+  }
+}
