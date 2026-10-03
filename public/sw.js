@@ -1,4 +1,4 @@
-const CACHE = 'stem-together-v2'
+const CACHE = 'stem-together-v3'
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE)

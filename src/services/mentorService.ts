@@ -1,9 +1,5 @@
 import type { Mentor, MentorRepository } from "../models";
-import {
-  getSavedProfiles,
-  localRepository,
-  saveProfiles,
-} from "../data/localRepository";
+import { localRepository } from "../data/localRepository";
 
 export class MentorService {
   private repository: MentorRepository;
@@ -11,14 +7,6 @@ export class MentorService {
   constructor(repository: MentorRepository) {
     this.repository = repository;
   }
-
-  getSavedProfiles = () => {
-    return getSavedProfiles();
-  };
-
-  saveProfiles = (ids: string[]) => {
-    saveProfiles(ids);
-  };
 
   getMentors = () => {
     return this.repository.getMentors();

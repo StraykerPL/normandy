@@ -42,10 +42,6 @@
   font-weight: 650;
 }
 
-.sidebar__count {
-  margin-left: auto;
-}
-
 .sidebar__note {
   margin-top: auto;
   background: #eee6f4;
@@ -195,10 +191,6 @@
 
   .sidebar__nav-icon {
     width: 16px;
-  }
-
-  .sidebar__count {
-    margin-left: 0;
   }
 
   .brand {

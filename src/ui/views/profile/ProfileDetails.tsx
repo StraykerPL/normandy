@@ -5,16 +5,12 @@ import './ProfileDetails.css'
 
 type ProfileDetailsProps = {
   profile: Mentor
-  saved: string[]
   openChat: (mentor: Mentor) => void
-  toggleSave: (id: string) => void
 }
 
 export const ProfileDetails = ({
   profile,
-  saved,
   openChat,
-  toggleSave,
 }: ProfileDetailsProps) => (
   <>
     <div
@@ -56,13 +52,6 @@ export const ProfileDetails = ({
           <Icon name="chat" />
           Chat with {profile.name}
           <Icon name="arrow" />
-        </button>
-        <button
-          className="button button--secondary"
-          onClick={() => toggleSave(profile.id)}
-        >
-          <Icon name="bookmark" />
-          {saved.includes(profile.id) ? 'Saved' : 'Save profile'}
         </button>
       </div>
     </div>

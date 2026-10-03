@@ -5,7 +5,6 @@ import './ui/shared.css'
 import './ui/layout/AppShell.css'
 import type { View } from './ui/types'
 import { Sidebar } from './ui/layout/Sidebar'
-import { Topbar } from './ui/layout/Topbar'
 import { Footer } from './ui/layout/Footer'
 import { DetailDialog } from './ui/layout/DetailDialog'
 import { DiscoverView } from './ui/views/discover/DiscoverView'
@@ -21,9 +20,6 @@ const App = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [draft, setDraft] = useState('')
   const [sending, setSending] = useState(false)
-  const [saved, setSaved] = useState<string[]>(() =>
-    mentorService.getSavedProfiles(),
-  )
   const [error, setError] = useState('')
   const [filter, setFilter] = useState('All subjects')
   const end = useRef<HTMLDivElement>(null)
@@ -48,21 +44,8 @@ const App = () => {
   }, [messages])
 
   const matches = mentorService
-    .match(mentors, view === 'saved' ? [] : selected)
-    .filter(
-      (m) =>
-        (view !== 'saved' || saved.includes(m.id)) &&
-        (filter === 'All subjects' || m.subject === filter),
-    )
-
-  const toggleSave = (id: string) => {
-    const next = saved.includes(id)
-      ? saved.filter((s) => s !== id)
-      : [...saved, id]
-
-    setSaved(next)
-    mentorService.saveProfiles(next)
-  }
+    .match(mentors, selected)
+    .filter((m) => filter === 'All subjects' || m.subject === filter)
 
   const openChat = async (mentor: Mentor) => {
     setProfile(null)
@@ -98,21 +81,17 @@ const App = () => {
 
   return (
     <div className="app-shell">
-      <Sidebar view={view} savedCount={saved.length} navigate={navigate} />
+      <Sidebar view={view} navigate={navigate} />
       <main className="app-shell__main">
-        <Topbar />
-        {view === 'discover' || view === 'saved' ? (
+        {view === 'discover' ? (
           <DiscoverView
-            view={view}
             mentors={mentors}
             matches={matches}
             selected={selected}
             setSelected={setSelected}
-            saved={saved}
             filter={filter}
             setFilter={setFilter}
             error={error}
-            toggleSave={toggleSave}
             setProfile={setProfile}
             navigate={navigate}
           />
@@ -130,9 +109,7 @@ const App = () => {
         profile={profile}
         setProfile={setProfile}
         setChat={setChat}
-        saved={saved}
         openChat={openChat}
-        toggleSave={toggleSave}
         messages={messages}
         draft={draft}
         setDraft={setDraft}

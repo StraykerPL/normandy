@@ -52,7 +52,6 @@ export const Icon = ({
         <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3" />
       </>
     ),
-    bookmark: <path d="M6 3h12v18l-6-4-6 4Z" />,
     leaf: <path d="M20 3C8 1 2 7 7 16c8 5 15-1 13-13ZM4 21 16 9" />,
   }
 

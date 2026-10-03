@@ -129,24 +129,3 @@ export const localRepository: MentorRepository = {
   },
 };
 
-export const getSavedProfiles = (): string[] => {
-  try {
-    const saved: unknown = JSON.parse(
-      localStorage.getItem("stem-saved") || "[]",
-    );
-
-    return Array.isArray(saved)
-      ? saved.filter((id): id is string => typeof id === "string")
-      : [];
-  } catch {
-    return [];
-  }
-};
-
-export const saveProfiles = (ids: string[]) => {
-  try {
-    localStorage.setItem("stem-saved", JSON.stringify(ids));
-  } catch {
-    /* UI retains the bookmarks for this session. */
-  }
-};

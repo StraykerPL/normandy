@@ -67,6 +67,5 @@ export const ChatConversation = ({
         <Icon name="arrow" />
       </button>
     </form>
-    <p className="chat__disclaimer">Messages are stored on this device.</p>
   </div>
 )

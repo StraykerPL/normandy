@@ -4,11 +4,10 @@ import './Sidebar.css'
 
 type SidebarProps = {
   view: View
-  savedCount: number
   navigate: (view: View) => void
 }
 
-export const Sidebar = ({ view, savedCount, navigate }: SidebarProps) => (
+export const Sidebar = ({ view, navigate }: SidebarProps) => (
   <aside className="sidebar">
     <a
       className="brand"
@@ -34,7 +33,6 @@ export const Sidebar = ({ view, savedCount, navigate }: SidebarProps) => (
         [
           ['discover', 'compass', 'Find your person'],
           ['messages', 'chat', 'My conversations'],
-          ['saved', 'bookmark', 'Saved profiles'],
         ] as const
       ).map(([key, icon, label]) => (
         <button
@@ -44,9 +42,6 @@ export const Sidebar = ({ view, savedCount, navigate }: SidebarProps) => (
         >
           <Icon name={icon} className="sidebar__nav-icon" />
           <span>{label}</span>
-          {key === 'saved' && savedCount > 0 && (
-            <small className="sidebar__count">{savedCount}</small>
-          )}
         </button>
       ))}
     </nav>

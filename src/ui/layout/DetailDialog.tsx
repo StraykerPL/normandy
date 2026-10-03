@@ -12,9 +12,7 @@ type DetailDialogProps = {
   profile: Mentor | null
   setProfile: (mentor: Mentor | null) => void
   setChat: (mentor: Mentor | null) => void
-  saved: string[]
   openChat: (mentor: Mentor) => void
-  toggleSave: (id: string) => void
   messages: Message[]
   draft: string
   setDraft: (draft: string) => void
@@ -30,9 +28,7 @@ export const DetailDialog = ({
   profile,
   setProfile,
   setChat,
-  saved,
   openChat,
-  toggleSave,
   messages,
   draft,
   setDraft,
@@ -74,9 +70,7 @@ export const DetailDialog = ({
     {profile && (
       <ProfileDetails
         profile={profile}
-        saved={saved}
         openChat={openChat}
-        toggleSave={toggleSave}
       />
     )}
     {chat && (

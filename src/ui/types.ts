@@ -1,1 +1,1 @@
-export type View = "discover" | "saved" | "messages" | "about";
+export type View = "discover" | "messages" | "about";

@@ -6,16 +6,12 @@ import './MentorCard.css'
 type MentorCardProps = {
   mentor: Mentor
   selected: string[]
-  saved: string[]
-  toggleSave: (id: string) => void
   setProfile: (mentor: Mentor) => void
 }
 
 export const MentorCard = ({
   mentor,
   selected,
-  saved,
-  toggleSave,
   setProfile,
 }: MentorCardProps) => (
   <article className="mentor-card">
@@ -28,14 +24,6 @@ export const MentorCard = ({
         alt={`${mentor.name}, ${mentor.subject} student`}
       />
       <span className="mentor-card__year">{mentor.year} student</span>
-      <button
-        aria-label={`${saved.includes(mentor.id) ? 'Unsave' : 'Save'} ${mentor.name}'s profile`}
-        aria-pressed={saved.includes(mentor.id)}
-        className={`mentor-card__save ${saved.includes(mentor.id) ? 'mentor-card__save--saved' : ''}`}
-        onClick={() => toggleSave(mentor.id)}
-      >
-        <Icon name="bookmark" className="mentor-card__save-icon" size={18} />
-      </button>
       <span className="mentor-card__decoration">✧</span>
     </div>
     <div className="mentor-card__content">

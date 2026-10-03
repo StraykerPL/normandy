@@ -33,28 +33,6 @@
   font-size: 9px;
 }
 
-.mentor-card__save {
-  position: absolute;
-  right: 11px;
-  top: 11px;
-  border-radius: 50%;
-  background: #fffdf0db;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  color: #6c6074;
-}
-
-.mentor-card__save.mentor-card__save--saved {
-  background: #ddc8ef;
-  color: #75508e;
-}
-
-.mentor-card__save--saved .mentor-card__save-icon {
-  fill: #bc98d6;
-}
-
 .mentor-card__decoration {
   position: absolute;
   right: 15px;
@@ -193,13 +171,6 @@
     font-size: 8px;
     left: 9px;
     bottom: 10px;
-  }
-
-  .mentor-card__save {
-    width: 27px;
-    height: 27px;
-    right: 8px;
-    top: 8px;
   }
 }
 
