@@ -97,6 +97,11 @@
 .discover__stories {
   margin-top: 34px;
 }
+.discover__story-count {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
 .discover__heart {
   color: var(--coral);
   flex-shrink: 0;

@@ -28,6 +28,7 @@ const App = () => {
     doubts: [],
   })
   const [tab, setTab] = useState<DiscoveryTab>('home')
+  const [storyDoubts, setStoryDoubts] = useState<string[]>([])
   const [profile, setProfile] = useState<Mentor | null>(null)
   const [filters, setFilters] = useState<MentorFilters>({
     field: '',
@@ -175,7 +176,9 @@ const App = () => {
         {screen === 'discover' && (
           <>
             <DiscoverView
-              mentors={mentors}
+              stories={mentorService.match(mentors, storyDoubts)}
+              storyDoubts={storyDoubts}
+              setStoryDoubts={setStoryDoubts}
               matches={matches}
               scores={scores}
               activeFilters={[filters.field, filters.university].filter(

@@ -4,17 +4,31 @@ A mobile-first, backend-less PWA helping girls explore technology studies throug
 
 ## Run locally
 
-Run from the repository root with Node.js compatible with Vite 8:
+1. On this repository's GitHub page, click the green **Code** button, then **Download ZIP**.
+2. Extract the ZIP and open the extracted project folder (the one containing `package.json`).
+3. Download the **LTS installer** for your operating system from [Node.js](https://nodejs.org/en/download/). Install it using the default options; npm is included. Use Node.js 24 LTS or newer.
+4. Open a terminal in the project folder. On Windows, open the folder in File Explorer, type `cmd` in the address bar, and press Enter. On macOS or Linux, open Terminal and type `cd ` followed by the folder's path.
+5. Check that Node.js and npm are installed by running these commands one at a time:
 
-- `npm ci`
-- `npm run dev`
-- `npm run lint`
-- `npm run build`
-- `npm run preview` (after building; open `http://localhost:4173/normandy/`)
-- `npm run build:test` builds for deployment at `/normandy/`; upload the contents of `dist/` to that subfolder.
-- `npm run preview:test` previews that build at `http://localhost:4173/normandy/`.
+   ```sh
+   node --version
+   npm --version
+   ```
 
-No new dependencies, server, account, or environment variables are required.
+   Both should print a version number. If a command is not found, close and reopen the terminal after installing Node.js.
+
+6. Install the app's dependencies and start it by running these commands one at a time:
+
+   ```sh
+   npm ci
+   npm run dev
+   ```
+
+7. Open the local URL printed in the terminal, usually `http://localhost:5173/normandy/`. Keep the terminal open while using the app. Press **Ctrl+C** to stop it.
+
+Next time, open a terminal in the same folder and run `npm run dev`.
+
+**Note:** The app is also available in the test environment via GitHub Pages.
 
 ## Flow
 

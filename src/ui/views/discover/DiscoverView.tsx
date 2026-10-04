@@ -3,11 +3,14 @@ import { Brand } from '../../layout/Brand'
 import { Icon } from '../../Icon'
 import { MentorCard } from './MentorCard'
 import { StoryList } from './StoryList'
+import { DoubtChips } from './DoubtChips'
 
 import './DiscoverView.css'
 
 type DiscoverViewProps = {
-  mentors: Mentor[]
+  stories: Mentor[]
+  storyDoubts: string[]
+  setStoryDoubts: (selected: string[]) => void
   matches: Mentor[]
   scores: Record<string, number>
   activeFilters: string[]
@@ -20,7 +23,9 @@ type DiscoverViewProps = {
 }
 
 export const DiscoverView = ({
-  mentors,
+  stories,
+  storyDoubts,
+  setStoryDoubts,
   matches,
   scores,
   activeFilters,
@@ -114,7 +119,22 @@ export const DiscoverView = ({
           </div>
           <Icon name="heart" className="discover__heart" />
         </div>
-        <StoryList mentors={mentors} setProfile={setProfile} />
+        <DoubtChips selected={storyDoubts} setSelected={setStoryDoubts} />
+        <p className="discover__story-count" role="status">
+          Liczba historii: {stories.length}
+        </p>
+        {stories.length > 0 ? (
+          <StoryList key={storyDoubts.join(',')} mentors={stories} setProfile={setProfile} />
+        ) : (
+          <div className="empty-state">
+            <Icon name="search" size={28} />
+            <h3>Nie ma historii dla tych wątpliwości.</h3>
+            <p>Wybierz inne pytania lub wyczyść filtry.</p>
+            <button className="text-button" onClick={() => setStoryDoubts([])}>
+              Wyczyść filtry
+            </button>
+          </div>
+        )}
       </section>
     )}
     <button className="text-button discover__edit" onClick={editAnswers}>
