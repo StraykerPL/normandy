@@ -9,7 +9,7 @@ const mentors: Mentor[] = [
     fields: ['Inżynieria'],
     university: 'Politechnika Warszawska',
     year: '2. rok',
-    image: '/portraits/maja.jpg',
+    image: `${import.meta.env.BASE_URL}portraits/maja.jpg`,
     categories: ['belonging', 'confidence', 'major', 'balance', 'career'],
     quote:
       'Myślałam, że nie pasuję. Teraz projektuję rzeczy, z których jestem dumna.',
@@ -27,7 +27,7 @@ const mentors: Mentor[] = [
     fields: ['Sztuczna inteligencja', 'Informatyka', 'Analiza danych'],
     university: 'Uniwersytet Warszawski',
     year: '3. rok',
-    image: '/portraits/amara.jpg',
+    image: `${import.meta.env.BASE_URL}portraits/amara.jpg`,
     categories: ['confidence', 'belonging', 'major', 'career', 'money'],
     quote: 'Bałam się pierwszej linijki kodu. Dziś tworzę własne projekty.',
     story:
@@ -44,7 +44,7 @@ const mentors: Mentor[] = [
     fields: ['UX / design'],
     university: 'AGH',
     year: '2. rok',
-    image: '/portraits/lena.jpg',
+    image: `${import.meta.env.BASE_URL}portraits/lena.jpg`,
     categories: ['belonging', 'confidence', 'major', 'balance', 'career'],
     quote: 'Nie wiedziałam, że kreatywność i technologia mogą iść razem.',
     story:

@@ -11,7 +11,7 @@ export const WelcomeView = ({ start }: { start: () => void }) => (
     </header>
     <div className="welcome__illustration">
       <img
-        src="/illustrations/techbestie-girls.png"
+        src={`${import.meta.env.BASE_URL}illustrations/techbestie-girls.png`}
         alt="Trzy uśmiechnięte dziewczyny zainteresowane technologią"
         width={1024}
         height={1024}

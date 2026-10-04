@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --base=/normandy/",
+    "build:test": "tsc -b && vite build --base=/normandy/",
     "lint": "eslint .",
     "preview": "vite preview",
+    "preview:test": "vite preview --base=/normandy/",
     "format": "prettier --write --ignore-unknown src/"
   },
   "dependencies": {

@@ -83,6 +83,10 @@ export const DetailDialog = ({
         error={error}
         send={send}
         end={end}
+        back={() => {
+          setProfile(chat)
+          setChat(null)
+        }}
       />
     )}
   </dialog>

@@ -10,7 +10,9 @@ Run from the repository root with Node.js compatible with Vite 8:
 - `npm run dev`
 - `npm run lint`
 - `npm run build`
-- `npm run preview` (after building)
+- `npm run preview` (after building; open `http://localhost:4173/normandy/`)
+- `npm run build:test` builds for deployment at `/normandy/`; upload the contents of `dist/` to that subfolder.
+- `npm run preview:test` previews that build at `http://localhost:4173/normandy/`.
 
 No new dependencies, server, account, or environment variables are required.
 
@@ -34,7 +36,7 @@ The existing category matcher remains available; survey recommendations add rank
 
 ## PWA
 
-The service worker runs only in production. Build and preview to verify installation and offline behavior. After a successful online load, the shell, generated assets, and the three new portraits are cached. Hosting assumes `/` and requires HTTPS, with localhost supported. Fonts use local fallbacks so the app has no runtime font-service dependency.
+The service worker runs only in production. Build and preview to verify installation and offline behavior. After a successful online load, the shell, generated assets, and the three new portraits are cached. Development, both build commands, and preview use `/normandy/`, including images, manifest, and service worker scope. Upload the contents of `dist/` into the server's `/normandy/` folder. Hosting requires HTTPS, with localhost supported. Fonts use local fallbacks so the app has no runtime font-service dependency.
 
 ## Validation
 

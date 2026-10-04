@@ -51,7 +51,7 @@ export const DiscoverView = ({
         <h1>Twoja droga do tech zaczyna się tutaj.</h1>
         <p className="discover__subtitle">Nie musisz iść nią sama.</p>
         <img
-          src="/illustrations/techbestie-girls.png"
+          src={`${import.meta.env.BASE_URL}illustrations/techbestie-girls.png`}
           alt=""
           width={1024}
           height={1024}
