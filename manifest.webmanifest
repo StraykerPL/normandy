@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "TechBestie",
+  "short_name": "TechBestie",
+  "lang": "pl",
+  "description": "Technologia jest też Twoim miejscem. Poznaj swoje TechBesties.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffbfc",
+  "theme_color": "#6540c7",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
