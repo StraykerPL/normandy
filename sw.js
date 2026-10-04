@@ -1,5 +1,5 @@
 const BASE = new URL('./', self.location.href).pathname
-const CACHE = `techbestie-v9-${BASE}`
+const CACHE = `techbestie-v10-${BASE}`
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE)
