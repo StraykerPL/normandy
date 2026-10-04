@@ -1,0 +1,24 @@
+.brand {
+  display: flex;
+  align-items: baseline;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+.brand__script {
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+  font-size: 1.2em;
+  font-style: italic;
+  color: var(--purple);
+  letter-spacing: -2px;
+}
+.brand__heart {
+  color: var(--coral);
+  fill: var(--coral);
+  transform: rotate(-20deg);
+  margin-left: 3px;
+}
+.brand--compact {
+  font-size: 25px;
+}

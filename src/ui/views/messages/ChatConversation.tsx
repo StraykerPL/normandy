@@ -12,6 +12,7 @@ type ChatConversationProps = {
   error: string
   send: (event: FormEvent) => void
   end: RefObject<HTMLDivElement | null>
+  back: () => void
 }
 
 export const ChatConversation = ({
@@ -23,48 +24,76 @@ export const ChatConversation = ({
   error,
   send,
   end,
+  back,
 }: ChatConversationProps) => (
   <div className="chat">
-    <div className="chat__header">
-      <img className="chat__avatar" src={chat.image} alt="" />
+    <header className="chat__header">
+      <button
+        className="icon-button"
+        aria-label="Wróć do historii"
+        onClick={back}
+      >
+        <Icon name="back" />
+      </button>
+      <img src={chat.image} alt="" width={44} height={44} />
       <div>
-        <h2 className="chat__title">{chat.name}</h2>
-        <p className="chat__subject">
-          <span className="status-dot" /> {chat.subject}
+        <h1>{chat.name}</h1>
+        <p>
+          {chat.subject} · {chat.university}
         </p>
       </div>
+    </header>
+    <div className="chat__messages">
+      <div className="chat__notice">
+        <Icon name="sparkle" />
+        <h2>Rozmowa z {chat.name}</h2>
+        <p>
+          Możesz tutaj napisać wiadomość. To podgląd rozmowy — wiadomości nie są
+          wysyłane.
+        </p>
+      </div>
+      <div
+        className="chat__history"
+        role="log"
+        aria-label="Wiadomości"
+        aria-live="polite"
+      >
+        {messages.map((message) => (
+          <div
+            className={`chat__message chat__message--${message.sender}`}
+            key={message.id}
+          >
+            <p>{message.text}</p>
+            <span>{message.time}</span>
+          </div>
+        ))}
+        <div ref={end} />
+      </div>
     </div>
-    <div className="chat__privacy">
-      <Icon name="lock" size={14} /> Your one-to-one space
-    </div>
-    <div className="chat__messages" aria-live="polite">
-      <p className="chat__date">A new connection starts here</p>
-      {messages.map((m) => (
-        <div className={`chat__message chat__message--${m.sender}`} key={m.id}>
-          <p className="chat__message-text">{m.text}</p>
-          <span className="chat__message-meta">
-            {m.sender === 'you' ? 'You' : chat.name} · {m.time}
-          </span>
-        </div>
-      ))}
-      <div ref={end} />
-    </div>
-    {error && <p role="alert">{error}</p>}
+    {error && (
+      <p className="chat__error" role="alert">
+        {error}
+      </p>
+    )}
     <form className="chat__form" onSubmit={send}>
-      <input
+      <label className="sr-only" htmlFor="message">
+        Twoja wiadomość
+      </label>
+      <textarea
+        id="message"
         className="chat__input"
-        aria-label="Message"
-        placeholder={`Ask ${chat.name} what’s on your mind…`}
+        placeholder="Napisz wiadomość..."
+        rows={1}
         value={draft}
-        maxLength={2000}
-        onChange={(e) => setDraft(e.target.value)}
+        maxLength={1000}
+        onChange={(event) => setDraft(event.target.value)}
       />
       <button
-        className="chat__send"
-        aria-label="Send message"
+        className="button button--primary chat__send"
+        aria-label="Dodaj wiadomość do podglądu"
         disabled={!draft.trim() || sending}
       >
-        <Icon name="arrow" />
+        <Icon name="send" />
       </button>
     </form>
   </div>

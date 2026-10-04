@@ -1,35 +1,39 @@
 .app-shell {
-  min-height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 460px;
+  background: var(--background);
+  box-shadow: 0 20px 80px #5035791f;
 }
-
 .app-shell__main {
-  margin-left: 246px;
-  padding: 0 48px;
-  max-width: 1640px;
+  display: flex;
+  flex-direction: column;
+  min-height: var(--screen-height);
+  outline: none;
 }
-
-@media (min-width: 1500px) {
-  .app-shell__main {
-    padding: 0 65px;
-  }
+.app-shell__back {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 24px 0;
 }
-
-@media (max-width: 1150px) {
-  .app-shell__main {
-    margin-left: 215px;
-    padding: 0 30px;
-  }
+.app-shell__back span {
+  flex: 1;
+  text-align: center;
+  padding-right: 58px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--purple);
 }
-
-@media (max-width: 700px) {
-  .app-shell__main {
-    margin: 0;
-    padding: 0 20px;
-  }
+.app-shell__error {
+  padding: 16px 24px;
+  font-size: 13px;
+  color: var(--coral);
 }
-
-@media (max-width: 370px) {
-  .app-shell__main {
-    padding: 0 14px;
+@media (min-width: 520px) {
+  .app-shell {
+    margin: 32px auto;
+    border-radius: 36px;
+    overflow: clip;
   }
 }

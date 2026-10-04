@@ -1,6 +1,5 @@
 import { Icon } from '../../Icon'
 import type { Mentor } from '../../../models'
-import { categories } from '../../../models'
 import './ProfileDetails.css'
 
 type ProfileDetailsProps = {
@@ -8,52 +7,32 @@ type ProfileDetailsProps = {
   openChat: (mentor: Mentor) => void
 }
 
-export const ProfileDetails = ({
-  profile,
-  openChat,
-}: ProfileDetailsProps) => (
-  <>
-    <div
-      className={`profile__hero surface-tone surface-tone--${profile.color}`}
-    >
-      <img className="profile__image" src={profile.image} alt={profile.name} />
-      <div>
-        <span className="eyebrow profile__eyebrow">
-          YOUR BEEN-THERE-BEFORE PERSON
-        </span>
-        <h2 className="profile__title">
-          Hi, I’m {profile.name}
-          <span className="profile__decoration">✧</span>
-        </h2>
-        <p className="profile__summary">
-          {profile.subject} · {profile.year}
-        </p>
-        <p className="profile__summary">{profile.university}</p>
-      </div>
+export const ProfileDetails = ({ profile, openChat }: ProfileDetailsProps) => (
+  <section className="profile">
+    <div className="avatar-ring avatar-ring--large">
+      <img src={profile.image} alt={profile.name} width={96} height={96} />
     </div>
-    <div className="profile__body">
-      <div className="tags profile__tags">
-        {profile.categories.map((id) => (
-          <span className="tags__item" key={id}>
-            {categories.find((c) => c.id === id)?.label}
-          </span>
-        ))}
-      </div>
-      <blockquote className="profile__quote">{profile.quote}</blockquote>
-      <h3 className="profile__section-title">How I got here</h3>
-      <p className="profile__text">{profile.story}</p>
-      <h3 className="profile__section-title">A little advice from me</h3>
-      <p className="profile__text">{profile.advice}</p>
-      <div className="profile__actions">
-        <button
-          className="button button--primary"
-          onClick={() => openChat(profile)}
-        >
-          <Icon name="chat" />
-          Chat with {profile.name}
-          <Icon name="arrow" />
-        </button>
-      </div>
+    <h1>Poznaj {profile.name}</h1>
+    <p className="profile__summary">
+      {profile.subject} · {profile.university}
+    </p>
+    <blockquote className="profile__quote">
+      <Icon name="heart" />
+      <p>„{profile.quote}”</p>
+    </blockquote>
+    <h2>Moja historia</h2>
+    <p className="profile__text">{profile.story}</p>
+    <h2>O czym możemy porozmawiać?</h2>
+    <p className="profile__text">{profile.advice}</p>
+    <div className="profile__actions">
+      <button
+        className="button button--primary button--wide"
+        onClick={() => openChat(profile)}
+      >
+        <Icon name="chat" size={18} />
+        Napisz do {profile.name}
+        <Icon name="arrow" size={18} />
+      </button>
     </div>
-  </>
+  </section>
 )

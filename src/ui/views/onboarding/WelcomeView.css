@@ -1,0 +1,73 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--screen-height);
+  padding: 55px 28px 36px;
+  background: linear-gradient(
+    155deg,
+    var(--background) 10%,
+    var(--lavender) 44%,
+    var(--blush) 80%,
+    var(--background)
+  );
+}
+.welcome__tagline {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.welcome__illustration {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  min-height: 285px;
+  margin: 28px -5px 0;
+}
+.welcome__illustration img {
+  width: 100%;
+  height: auto;
+  max-width: 370px;
+}
+.welcome__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface);
+  padding: 7px 10px;
+  border-radius: 30px;
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 800;
+}
+.welcome h1 {
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  margin-top: 16px;
+}
+.welcome__script {
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--purple);
+}
+.welcome__description {
+  margin: 18px 0 30px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.welcome__note {
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 360px) {
+  .welcome {
+    padding-inline: 22px;
+  }
+  .welcome h1 {
+    font-size: 30px;
+  }
+}

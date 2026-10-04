@@ -1,4 +1,4 @@
-const CACHE = 'stem-together-v3'
+const CACHE = 'techbestie-v4'
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE)
@@ -6,14 +6,14 @@ self.addEventListener('install', event => {
     if (!response.ok) throw new Error('App shell could not be loaded')
     const html = await response.text()
     const assets = [...html.matchAll(/(?:src|href)="(\/assets\/[^" ]+)"/g)].map(match => match[1])
-    await cache.addAll(['/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/portraits/maya.jpg', '/portraits/aisha.jpg', '/portraits/ella.jpg', '/portraits/sophie.jpg', ...assets])
+    await cache.addAll(['/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/favicon.svg', '/illustrations/techbestie-girls.png', '/portraits/maja.jpg', '/portraits/amara.jpg', '/portraits/lena.jpg', ...assets])
     await cache.put('/', new Response(html, { headers: { 'Content-Type': 'text/html' } }))
     await self.skipWaiting()
   })())
 })
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
-    await Promise.all((await caches.keys()).filter(key => key.startsWith('stem-together-') && key !== CACHE).map(key => caches.delete(key)))
+    await Promise.all((await caches.keys()).filter(key => (key.startsWith('stem-together-') || key.startsWith('techbestie-')) && key !== CACHE).map(key => caches.delete(key)))
     await self.clients.claim()
   })())
 })

@@ -10,6 +10,27 @@ export const Icon = ({
   className?: string
 }) => {
   const paths: Record<string, ReactNode> = {
+    back: <path d="M20 12H4m6-6-6 6 6 6" />,
+    home: <path d="m3 10 9-7 9 7v11h-6v-7H9v7H3Z" />,
+    user: (
+      <>
+        <circle cx="12" cy="7" r="4" />
+        <path d="M4 22v-3a8 8 0 0 1 16 0v3" />
+      </>
+    ),
+    filter: (
+      <>
+        <path d="M3 6h18M3 12h18M3 18h18" />
+        <path d="M7 3v6m10 0v6M9 15v6" />
+      </>
+    ),
+    search: (
+      <>
+        <circle cx="10" cy="10" r="7" />
+        <path d="m15 15 6 6" />
+      </>
+    ),
+    send: <path d="m22 2-7 20-4-9L2 9 22 2ZM11 13 22 2" />,
     heart: (
       <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
     ),
