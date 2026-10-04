@@ -1,4 +1,4 @@
-const CACHE = 'techbestie-v4'
+const CACHE = 'techbestie-v6'
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE)

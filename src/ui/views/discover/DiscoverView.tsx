@@ -2,6 +2,7 @@ import type { Mentor } from '../../../models'
 import { Brand } from '../../layout/Brand'
 import { Icon } from '../../Icon'
 import { MentorCard } from './MentorCard'
+import { StoryList } from './StoryList'
 
 import './DiscoverView.css'
 
@@ -113,28 +114,7 @@ export const DiscoverView = ({
           </div>
           <Icon name="heart" className="discover__heart" />
         </div>
-        <div className="discover__story-list">
-          {mentors.map((mentor) => (
-            <button
-              key={mentor.id}
-              className={`story-card story-card--${mentor.color}`}
-              onClick={() => setProfile(mentor)}
-            >
-              <img
-                src={mentor.image}
-                alt=""
-                width={48}
-                height={48}
-                loading="lazy"
-              />
-              <h3>{mentor.name}</h3>
-              <p>„{mentor.quote}”</p>
-              <span>
-                Czytaj historię <Icon name="arrow" size={15} />
-              </span>
-            </button>
-          ))}
-        </div>
+        <StoryList mentors={mentors} setProfile={setProfile} />
       </section>
     )}
     <button className="text-button discover__edit" onClick={editAnswers}>

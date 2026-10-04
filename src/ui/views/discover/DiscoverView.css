@@ -105,9 +105,34 @@
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   gap: 12px;
-  margin: 20px -24px 0;
-  padding: 0 24px 20px;
+  margin: 0 -24px;
+  padding: 20px 24px;
+}
+.discover__story-list--dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+.discover__story-list--dragging .story-card {
+  cursor: grabbing;
+}
+.discover__story-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .discover__story-list {
+    cursor: grab;
+    user-select: none;
+  }
+}
+.discover__story-list::-webkit-scrollbar {
+  display: none;
 }
 .discover__edit {
   margin: 25px 0 12px;

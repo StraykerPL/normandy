@@ -36,6 +36,6 @@ The existing category matcher remains available; survey recommendations add rank
 
 The service worker runs only in production. Build and preview to verify installation and offline behavior. After a successful online load, the shell, generated assets, and the three new portraits are cached. Hosting assumes `/` and requires HTTPS, with localhost supported. Fonts use local fallbacks so the app has no runtime font-service dependency.
 
-## Integration and validation
+## Validation
 
-See [integrate.md](integrate.md) for significant changes, matching weights, storage compatibility, and the human verification checklist. `docs/` and `src-integrate/` remain reference material; source integration code is excluded from application linting and never imported. No test runner is configured. Run lint and build before submitting changes; manual interaction, responsive layout, theme, and offline checks are performed by a human.
+No test runner is configured. Run lint and build before submitting changes; manually verify interactions, responsive layouts, themes, and offline behavior.
